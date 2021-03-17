@@ -1,29 +1,64 @@
 <template>
-  <div class="xs-only:mb-14">
-    <div class="sm:hidden fixed w-full flex justify-end py-2 pr-4 bg-blue-300">
+  <div class="">
+    <div class="sm:hidden w-full flex justify-end py-2 pr-4">
       <button
         class="hamburger flex justify-center items-center sm:hidden focus:outline-none text-center"
         type="button"
-        :class="isOpen ? 'open' : ''"
         @click="toggleNavbar"
       >
-        <span class="hamburger__top-bun block"></span
-        ><span class="hamburger__bottom-bun block"></span>
+        <svg
+          class="h-5 w-5 text-gray-600"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
       </button>
     </div>
     <nav
-      class="sm:hidden fixed transition-all transform w-full overflow-y-auto h-screen mt-12 bg-blue-300"
-      :class="!isOpen ? 'translate-x-full' : 'translate-x-0'"
+      class="sm:hidden flex flex-col top-0 z-10 fixed transition-all duration-1000 ease-out transform w-full overflow-y-auto h-screen bg-blue-200"
+      :class="
+        !isOpen ? 'translate-x-full opacity-0' : 'translate-x-0 opacity-1'
+      "
     >
+      <div class="p-4">
+        <button
+          class="hamburger flex justify-center items-center sm:hidden focus:outline-none text-center"
+          type="button"
+          @click="toggleNavbar"
+        >
+          <svg
+            class="h-6 w-6 text-gray-600"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 5l7 7-7 7M5 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
       <div
-        class="flex flex-col sm:flex-row list-reset m-0 w-full flex-wrap justify-center flex-grow bg-blue-300"
+        class="flex flex-1 flex-col list-reset m-0 w-full flex-wrap justify-center bg-blue-200"
       >
         <div v-for="item in items" :key="item.name">
-          <div class="sm:hidden">
-            <div class="flex items-center border-b-2 px-4 py-2">
+          <div class="sm:hidden text-right">
+            <div>
               <nuxt-link
                 :to="item.link"
-                class="block flex-1"
+                class="inline-block px-4 py-5"
                 :class="
                   $route.path === item.link
                     ? 'font-bold text-gray-50'
@@ -72,6 +107,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
 /* HAMBURGER MENU */
 
 .hamburger {

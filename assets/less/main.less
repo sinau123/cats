@@ -1,4 +1,6 @@
 body {
+  @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
   @apply text-base;
 
   &.no-scroll {
@@ -11,5 +13,37 @@ body {
     &:hover {
       opacity: 0.8;
     }
+  }
+}
+
+.container {
+  @apply max-w-5xl;
+}
+
+.m-icon {
+  display: inline-block;
+  height: 32px;
+  vertical-align: text-top;
+  background: url('~/assets/img/sprite.png') no-repeat;
+
+  &.icon-fb {
+    width: 53px;
+    height: 53px;
+    background-position: -32px -14px;
+    transform: scale(0.6);
+  }
+
+  &.icon-tw {
+    width: 53px;
+    height: 53px;
+    background-position: -134px -14px;
+    transform: scale(0.6);
+  }
+
+  &.icon-ig {
+    width: 53px;
+    height: 53px;
+    background-position: -438px -14px;
+    transform: scale(0.6);
   }
 }

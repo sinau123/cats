@@ -1,17 +1,14 @@
 <template>
   <div>
-    <div class="text-blue-400 text-3xl font-bold pt-4 text-center">
-      My Kitten
-    </div>
-    <div class="text-blue-400 text-xl font-bold mb-2 text-center">Cattery</div>
+    <div class="text-blue-400 text-6xl pt-4 text-center font-pota">MIAUMI</div>
+    <div class="text-blue-400 text-3xl font-bold mb-2 text-center">Cattery</div>
     <MobileNavbar :items="items" />
 
-    <nav class="xs-only:hidden h-screen sm:h-auto mt-12 sm:mt-0 bg-blue-300">
+    <nav class="xs-only:hidden h-screen sm:h-auto mt-12 sm:mt-0 bg-blue-200">
       <div
-        class="flex flex-col sm:flex-row list-reset m-0 w-full md:w-auto flex-wrap sm:items-center justify-center flex-grow bg-blue-300"
+        class="flex flex-col sm:flex-row list-reset m-0 w-full md:w-auto flex-wrap sm:items-center justify-center flex-grow bg-blue-200"
       >
         <div v-for="item in items" :key="item.name" class="sm:mx-1">
-          <CollapsibleNavbarItem :item="item" />
           <nuxt-link
             data-trigger
             :to="item.link"
