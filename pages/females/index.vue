@@ -21,5 +21,15 @@ export default {
       ],
     }
   },
+  head: {
+    title: 'Female Cats',
+    meta: [
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Female Cats',
+      },
+    ],
+  },
 }
 </script>
