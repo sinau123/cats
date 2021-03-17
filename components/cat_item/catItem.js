@@ -13,9 +13,9 @@ export class CatItem {
 
   /**
    * get cat image path
-   * @returns {string}
+   * @returns {any}
    */
   getImg() {
-    return `/images/cats/${this.img}`
+    return require(`@/assets/img/cats/${this.img}`)
   }
 }
