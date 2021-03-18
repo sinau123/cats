@@ -8,19 +8,31 @@
       </div>
       <div class="flex flex-1 flex-col items-end xs-only:mb-4">
         <div class="flex xs-only:mb-4">
-          <a href="https://www.facebook.com/detax.id.3" target="_blank">
+          <a
+            href="https://www.instagram.com/miaumicattery"
+            title="Miaumi Cattery Instagram Profile"
+            target="_blank"
+          >
+            <span class="m-icon icon-ig"></span>
+          </a>
+          <a
+            href="https://www.facebook.com/mami.cattery"
+            title="Miaumi Cattery Facebook Profile"
+            target="_blank"
+          >
             <span class="m-icon icon-fb small"></span>
           </a>
-          <a href="https://www.twitter.com/DetaxId" target="_blank">
-            <span class="m-icon icon-tw small"></span>
-          </a>
-          <a href="https://www.instagram.com/detax_id" target="_blank">
-            <span class="m-icon icon-ig small"></span>
+          <a
+            href="https://www.facebook.com/miaumicattery"
+            title="Miaumi Cattery Facebook Page"
+            target="_blank"
+          >
+            <span class="m-icon icon-fb small"></span>
           </a>
         </div>
         <div class="text-right">
-          fast respons via whatsapp +62 888 8888 8888 <br />
-          miaumi.cattery@gmail.com <br />
+          fast respons via whatsapp +62 823 4800 5555 <br />
+          mamicattery@gmail.com <br />
           Jakarta, Indonesia
         </div>
       </div>

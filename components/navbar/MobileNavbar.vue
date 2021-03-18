@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div class="sm:hidden w-full flex justify-end py-2 pr-4">
+    <div class="sm:hidden w-full flex justify-end py-2 pr-4 bg-blue-200">
       <button
         class="hamburger flex justify-center items-center sm:hidden focus:outline-none text-center"
         type="button"
@@ -23,12 +23,18 @@
       </button>
     </div>
     <nav
-      class="sm:hidden flex flex-col top-0 z-10 fixed transition-all duration-1000 ease-out transform w-full overflow-y-auto h-screen bg-blue-200"
-      :class="
-        !isOpen ? 'translate-x-full opacity-0' : 'translate-x-0 opacity-1'
-      "
+      class="sm:hidden flex flex-col top-0 z-10 fixed transition-all duration-700 ease-in transform w-full overflow-y-auto h-screen bg-blue-200"
+      :class="!isOpen ? '-translate-x-full' : 'translate-x-0'"
     >
-      <div class="p-4">
+      <div>
+        <div class="text-blue-400 text-6xl pt-2 text-center font-pota">
+          MIAUMI
+        </div>
+        <div class="text-blue-400 text-3xl font-bold mb-2 text-center">
+          Cattery
+        </div>
+      </div>
+      <div class="p-4 flex justify-end">
         <button
           class="hamburger flex justify-center items-center sm:hidden focus:outline-none text-center"
           type="button"
@@ -45,13 +51,13 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M13 5l7 7-7 7M5 5l7 7-7 7"
+              d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
             />
           </svg>
         </button>
       </div>
       <div
-        class="flex flex-1 flex-col list-reset m-0 w-full flex-wrap justify-center bg-blue-200"
+        class="flex flex-1 flex-col list-reset m-0 w-full flex-wrap justify-center text-2xl bg-blue-200 pr-3"
       >
         <div v-for="item in items" :key="item.name">
           <div class="sm:hidden text-right">
@@ -60,7 +66,8 @@
                 :to="item.link"
                 class="inline-block px-4 py-5"
                 :class="
-                  $route.path === item.link
+                  $route.path.replace(/\/$/, '') ===
+                  item.link.replace(/\/$/, '')
                     ? 'font-bold text-gray-50'
                     : 'font-normal'
                 "
@@ -90,11 +97,16 @@ export default {
   },
   watch: {
     isOpen(val) {
-      if (val) {
-        document.body.classList.add('no-scroll')
-      } else {
-        document.body.classList.remove('no-scroll')
-      }
+      setTimeout(() => {
+        if (val) {
+          document.body.classList.add('no-scroll')
+        } else {
+          document.body.classList.remove('no-scroll')
+        }
+      }, 700)
+    },
+    $route() {
+      this.isOpen = false
     },
   },
 
