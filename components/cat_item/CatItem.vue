@@ -12,11 +12,12 @@
           :alt="item.name"
         />
       </div>
-      <div
-        class="font-bold text-xl shadow-xl border-gray-600 border-2 rounded-2xl absolute mx-4 left-0 right-0 text-center p-2 -bottom-6 text-gray-800 bg-blue-200"
+      <nuxt-link
+        :to="item.getLink()"
+        class="block font-bold text-xl shadow-xl border-gray-600 border-2 rounded-2xl absolute mx-4 left-0 right-0 text-center p-2 -bottom-6 text-gray-800 bg-blue-200"
       >
         {{ item.name }}
-      </div>
+      </nuxt-link>
     </div>
     <div class="text-lg text-center text-blue-400">
       {{ item.colors }}
@@ -24,7 +25,7 @@
   </div>
 </template>
 <script>
-import { CatItem } from '~/components/cat_item/catItem.js'
+import { CatItem } from '~/models/catItem.js'
 
 export default {
   props: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-blue-300 p-4 xs-only:text-sm">
+  <div class="bg-blue-400 p-4 xs-only:text-sm text-gray-50 text-shadow-sm">
     <div
       class="flex xs-only:flex-col-reverse xs-only:items-end justify-between container m-auto"
     >

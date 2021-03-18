@@ -14,11 +14,17 @@
           class="absolute bottom-2 sm:bottom-4 p-2 sm:p-8 text-white font-bold"
         >
           <div
+            data-aos="fade-right"
+            data-aos-duration="2000"
             class="font-pota text-3xl sm:text-6xl md:max-w-xl text-shadow-xl"
           >
             from the best bloodlines
           </div>
-          <div class="text-shadow text-base sm:text-2xl leading-4">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="2000"
+            class="text-shadow text-base sm:text-2xl leading-4"
+          >
             we developing posture and characteristics
           </div>
         </div>

@@ -21,7 +21,7 @@
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
         "editor.detectIndentation": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[vue]": {
         "editor.formatOnSave": true,
@@ -37,4 +37,5 @@
         "editor.formatOnSave": true
     },
     "prettier.useEditorConfig": false,
+    "less.validate": false
 }

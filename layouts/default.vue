@@ -1,7 +1,11 @@
 <template>
-  <div class="bg-blue-50 min-h-screen">
-    <Navbar />
-    <Nuxt />
+  <div>
+    <div id="container">
+      <Navbar />
+      <div class="min-h-full">
+        <Nuxt />
+      </div>
+    </div>
     <FooterComp />
   </div>
 </template>
@@ -13,4 +17,8 @@ export default {
   },
 }
 </script>
-<style></style>
+<style lang="less" scoped>
+#container {
+  min-height: calc(100vh - 200px);
+}
+</style>

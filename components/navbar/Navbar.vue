@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { NavbarItem } from './navbar.js'
+import { NavbarItem } from '~/models/navbar.js'
 export default {
   components: {
     MobileNavbar: () => import('~/components/navbar/MobileNavbar'),

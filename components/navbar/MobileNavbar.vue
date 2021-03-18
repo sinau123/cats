@@ -23,7 +23,7 @@
       </button>
     </div>
     <nav
-      class="sm:hidden flex flex-col top-0 z-10 fixed transition-all duration-700 ease-in transform w-full overflow-y-auto h-screen bg-blue-200"
+      class="sm:hidden flex flex-col top-0 z-10 fixed transition-all duration-500 ease-in transform w-full overflow-y-auto h-screen bg-blue-200"
       :class="!isOpen ? '-translate-x-full' : 'translate-x-0'"
     >
       <div>
@@ -57,14 +57,14 @@
         </button>
       </div>
       <div
-        class="flex flex-1 flex-col list-reset m-0 w-full flex-wrap justify-center text-2xl bg-blue-200 pr-3"
+        class="flex flex-1 flex-col list-reset m-0 w-full flex-wrap justify-center text-xl bg-blue-200 pr-3"
       >
         <div v-for="item in items" :key="item.name">
           <div class="sm:hidden text-right">
             <div>
               <nuxt-link
                 :to="item.link"
-                class="inline-block px-4 py-5"
+                class="inline-block px-4 py-3"
                 :class="
                   $route.path.replace(/\/$/, '') ===
                   item.link.replace(/\/$/, '')
@@ -103,7 +103,7 @@ export default {
         } else {
           document.body.classList.remove('no-scroll')
         }
-      }, 700)
+      }, 500)
     },
     $route() {
       this.isOpen = false
