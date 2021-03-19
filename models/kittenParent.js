@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const { CatItem } = require('./catItem')
+import { CatItem } from './catItem'
 
 export class KittenParent {
   /**
