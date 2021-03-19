@@ -6,7 +6,8 @@ export default [
     gender: 'male',
     colors: 'white orange',
     eyes: 'black yellow',
-    birthDate: '15-01-21',
+    birthdate: '15-01-2021',
+    available: true,
     extra_image: [
       'cat_1.jpeg',
       'cat_2.jpeg',
@@ -21,12 +22,13 @@ export default [
   },
   {
     name: 'Kitten Two',
-    image: 'cat_4.jpeg',
+    image: 'cat_5.jpeg',
     breeds: 'Persian',
     gender: 'male',
     colors: 'white orange',
     eyes: 'black yellow',
-    birthDate: '15-01-21',
+    birthdate: '15-01-2021',
+    available: false,
     extra_image: [
       'cat_1.jpeg',
       'cat_2.jpeg',
@@ -41,12 +43,13 @@ export default [
   },
   {
     name: 'Kitten Three',
-    image: 'cat_2.jpeg',
+    image: 'cat_3.jpeg',
     breeds: 'Persian',
     gender: 'male',
     colors: 'white orange',
     eyes: 'black yellow',
-    birthDate: '15-01-21',
+    birthdate: '12-02-2021',
+    available: true,
     extra_image: [
       'cat_1.jpeg',
       'cat_2.jpeg',
@@ -61,12 +64,13 @@ export default [
   },
   {
     name: 'Kitten Four',
-    image: 'cat_4.jpeg',
+    image: 'cat_7.jpeg',
     breeds: 'Persian',
     gender: 'male',
     colors: 'white orange',
     eyes: 'black yellow',
-    birthDate: '15-01-21',
+    birthdate: '12-02-2021',
+    available: true,
     extra_image: [
       'cat_1.jpeg',
       'cat_2.jpeg',

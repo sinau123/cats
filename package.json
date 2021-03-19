@@ -18,6 +18,7 @@
     "@popperjs/core": "^2.9.1",
     "aos": "^3.0.0-beta.6",
     "core-js": "^3.8.3",
+    "date-fns": "^2.19.0",
     "lodash": "^4.17.21",
     "nuxt": "^2.15.3",
     "nuxt-lazy-load": "^1.2.5",

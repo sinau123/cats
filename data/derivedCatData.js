@@ -1,6 +1,7 @@
 import { CatItem } from '../models/catItem'
 import { CatPlanItem } from '../models/catPlanItem'
 import { KittenItem } from '../models/kittenItem'
+import { KittenParent } from '../models/kittenParent'
 import catsData from './cats_data'
 import kittensData from './kittens_data'
 import catsPlanData from './cats_plans_data'
@@ -23,8 +24,7 @@ export const toCat = (cat) => {
     cat.gender,
     cat.eyes,
     cat.breeds,
-    cat.extra_image,
-    cat.kittens
+    cat.extra_image
   )
 }
 
@@ -42,10 +42,40 @@ export const toKitten = (cat) => {
     cat.eyes,
     cat.breeds,
     cat.birthdate,
+    cat.available,
     cat.extra_image,
-    cat.parent
+    new KittenParent(
+      findMaleCatByName(cat.parent.male),
+      findFemaleCatByName(cat.parent.female)
+    )
   )
 }
+
+/**
+ * @type {CatItem[]}
+ */
+export const getFemaleCats = catsData
+  .filter((cat) => cat.gender === 'female')
+  .map(toCat)
+
+/**
+ * @type {CatItem[]}
+ */
+export const getMaleCats = catsData
+  .filter((cat) => cat.gender === 'male')
+  .map(toCat)
+
+/**
+ * @type {KittenItem[]}
+ */
+export const getKittens = kittensData.map(toKitten)
+
+/**
+ * @type {KittenItem[]}
+ */
+export const getAvailableKittens = kittensData
+  .filter((k) => k.available)
+  .map(toKitten)
 
 /**
  * get cat by name
@@ -58,9 +88,33 @@ export const findCatByName = (name) => {
 }
 
 /**
+ * get male cat by name
+ * @param {string} name
+ * @returns {CatItem}
+ */
+export function findMaleCatByName(name) {
+  const cat = catsData.find(
+    (c) => c.name.toLowerCase() === name.toLowerCase() && c.gender === 'male'
+  )
+  return cat ? toCat(cat) : cat
+}
+
+/**
+ * get female cat by name
+ * @param {string} name
+ * @returns {CatItem}
+ */
+export function findFemaleCatByName(name) {
+  const cat = catsData.find(
+    (c) => c.name.toLowerCase() === name.toLowerCase() && c.gender === 'female'
+  )
+  return cat ? toCat(cat) : cat
+}
+
+/**
  * get cats by kitten name
  * @param {string} name
- * @returns {male: CatItem, female: CatItem}
+ * @returns { { male: CatItem, female: CatItem } }
  */
 export const findCatsByKittenName = (name) => {
   const nameLower = name.toLowerCase()
@@ -86,20 +140,6 @@ export const findKittenByParent = (parentName) => {
     })
     .map(toKitten)
 }
-
-/**
- * @type {CatItem[]}
- */
-export const getFemaleCats = catsData
-  .filter((cat) => cat.gender === 'female')
-  .map(toCat)
-
-/**
- * @type {CatItem[]}
- */
-export const getMaleCats = catsData
-  .filter((cat) => cat.gender === 'male')
-  .map(toCat)
 
 /**
  * get plan item

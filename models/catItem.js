@@ -13,9 +13,8 @@ export class CatItem {
    * @param {string} eyes
    * @param {string} breeds
    * @param {string[]} extraImg
-   * @param {any[]} kittens
    */
-  constructor(name, img, colors, gender, eyes, breeds, extraImg, kittens) {
+  constructor(name, img, colors, gender, eyes, breeds, extraImg) {
     this.name = name || ''
     this.img = img || ''
     this.colors = colors || ''
@@ -23,7 +22,6 @@ export class CatItem {
     this.eyes = eyes || ''
     this.breeds = breeds || ''
     this.extraImg = extraImg || []
-    this.kittens = kittens || []
   }
 
   /**
@@ -55,7 +53,23 @@ export class CatItem {
    * @returns {string}
    */
   getInfoStr() {
-    return [this.breeds, this.gender, this.colors, this.eyes]
+    return [
+      this.breeds,
+      this.gender,
+      this.colors,
+      this.eyes ? this.eyes + ' eyes' : '',
+    ]
+      .filter((i) => !!i)
+      .map(startCase)
+      .join('&nbsp;&nbsp;/&nbsp;&nbsp;')
+  }
+
+  /**
+   * get cat info string
+   * @returns {string}
+   */
+  getSimpleInfoStr() {
+    return [this.gender, this.breeds]
       .filter((i) => !!i)
       .map(startCase)
       .join('&nbsp;&nbsp;/&nbsp;&nbsp;')

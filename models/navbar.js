@@ -6,6 +6,6 @@ export class NavbarItem {
    */
   constructor(name, link) {
     this.name = name
-    this.link = link || '/' + name.toLowerCase().replace(/\s/g, '-')
+    this.link = link || '/' + name.toLowerCase().replace(/\s/g, '_')
   }
 }

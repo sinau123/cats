@@ -1,5 +1,8 @@
 import startCase from 'lodash/startCase'
+import { parse, format } from 'date-fns'
 import { CatItem } from './catItem'
+// eslint-disable-next-line no-unused-vars
+import { KittenParent } from './kittenParent'
 
 export class KittenItem {
   /**
@@ -11,8 +14,9 @@ export class KittenItem {
    * @param {string} eyes
    * @param {string} breeds
    * @param {string} birthdate
+   * @param {boolean} available
    * @param {string[]} extraImg
-   * @param {CatItem[]} parent
+   * @param {KittenParent} parent
    */
   constructor(
     name,
@@ -22,6 +26,7 @@ export class KittenItem {
     eyes,
     breeds,
     birthdate,
+    available,
     extraImg,
     parent
   ) {
@@ -32,8 +37,9 @@ export class KittenItem {
     this.eyes = eyes || ''
     this.breeds = breeds || ''
     this.birthdate = birthdate
+    this.available = available || true
     this.extraImg = extraImg || []
-    this.parent = parent || []
+    this.parent = parent
   }
 
   /**
@@ -57,10 +63,34 @@ export class KittenItem {
    * @returns {string}
    */
   getInfoStr() {
-    return [this.breeds, this.gender, this.colors, this.eyes, this.birthdate]
-      .filter((i) => !!i)
-      .map(startCase)
-      .join('&nbsp;&nbsp;/&nbsp;&nbsp;')
+    return [
+      ...[
+        this.breeds,
+        this.gender,
+        this.colors,
+        this.eyes ? this.eyes + ' eyes' : '',
+      ]
+        .filter((i) => !!i)
+        .map(startCase),
+      ...[
+        format(parse(this.birthdate, 'dd-MM-yyyy', new Date()), 'dd MMM yyyy'),
+      ],
+    ].join('&nbsp;&nbsp;/&nbsp;&nbsp;')
+  }
+
+  /**
+   * get cat info string
+   * @returns {string}
+   */
+  getSimpleInfoStr() {
+    return [
+      ...[this.breeds, this.gender, this.colors]
+        .filter((i) => !!i)
+        .map(startCase),
+      ...[
+        format(parse(this.birthdate, 'dd-MM-yyyy', new Date()), 'dd MMM yyyy'),
+      ],
+    ].join('&nbsp;&nbsp;/&nbsp;&nbsp;')
   }
 
   /**

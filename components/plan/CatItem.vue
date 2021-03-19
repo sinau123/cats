@@ -1,11 +1,13 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div
     class="mt-2 mb-4 md:w-80 lg:w-96 w-44"
     :class="type === 'male' ? '-mr-4' : '-ml-4'"
   >
     <div class="text-center">
-      <div
-        class="shadow-xl border-2 border-gray-600 mb-7 overflow-hidden"
+      <nuxt-link
+        :to="item.getLink()"
+        class="block hover:opacity-100 hover:shadow-3xl shadow-xl border-2 border-gray-600 mb-7 overflow-hidden"
         :class="type === 'male' ? 'rounded-md' : 'rounded-full border-pink-400'"
       >
         <img
@@ -13,17 +15,20 @@
           :src="item.getImg()"
           :alt="item.name"
         />
-      </div>
+      </nuxt-link>
     </div>
     <div :class="type === 'male' ? 'pr-8' : 'pl-8'">
+      <nuxt-link :to="item.getLink()" class="block">
+        <div
+          class="font-bold text-xl xs-only:text-base text-center text-gray-800"
+        >
+          {{ item.name }}
+        </div>
+      </nuxt-link>
       <div
-        class="font-bold text-xl xs-only:text-base text-center text-gray-800"
-      >
-        {{ item.name }}
-      </div>
-      <div class="text-lg xs-only:text-sm text-center text-blue-400">
-        {{ item.colors }}
-      </div>
+        class="text-lg xs-only:text-sm text-center text-blue-400"
+        v-html="item.getSimpleInfoStr()"
+      ></div>
     </div>
   </div>
 </template>

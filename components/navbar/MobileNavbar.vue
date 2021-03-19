@@ -57,7 +57,7 @@
         </button>
       </div>
       <div
-        class="flex flex-1 flex-col list-reset m-0 w-full flex-wrap justify-center text-xl bg-blue-200 pr-3"
+        class="flex flex-1 flex-col list-reset m-0 w-full flex-wrap text-xl bg-blue-200 pr-3"
       >
         <div v-for="item in items" :key="item.name">
           <div class="sm:hidden text-right">
