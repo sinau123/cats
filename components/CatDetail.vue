@@ -94,7 +94,7 @@
   </div>
 </template>
 <script>
-import { findCatByName } from '~/data/derivedCatData'
+import { findCatByName } from '~/derived-data'
 import { CatItem } from '~/models/catItem'
 
 export default {

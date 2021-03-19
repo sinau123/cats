@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import { getAvailableKittens } from '~/data/derivedCatData'
+import { getAvailableKittens } from '~/derived-data'
 
 export default {
   components: {

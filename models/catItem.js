@@ -1,5 +1,5 @@
 import startCase from 'lodash/startCase'
-import { findKittenByParent } from '../data/derivedCatData'
+import { findKittenByParent } from '../derived-data'
 // eslint-disable-next-line no-unused-vars
 import { KittenItem } from './kittenItem'
 

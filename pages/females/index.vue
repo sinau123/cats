@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import { getFemaleCats } from '~/data/derivedCatData'
+import { getFemaleCats } from '~/derived-data'
 export default {
   components: {
     CatItems: () => import('~/components/cat_item/CatItems'),

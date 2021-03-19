@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import { getPlanItems } from '~/data/derivedCatData'
+import { getPlanItems } from '~/derived-data'
 
 export default {
   components: {
