@@ -17,7 +17,7 @@
       </nuxt-link>
       <nuxt-link
         :to="item.getLink()"
-        class="hover:opacity-100 hover:bg-blue-300 block font-bold text-xl shadow-xl border-gray-600 border-2 rounded-2xl absolute mx-4 left-0 right-0 text-center p-2 -bottom-6 text-gray-800 bg-blue-200"
+        class="hover:opacity-100 overflow-ellipsis whitespace-nowrap overflow-x-hidden hover:bg-blue-300 block font-bold text-xl shadow-xl border-gray-600 border-2 rounded-2xl absolute mx-4 left-0 right-0 text-center p-2 -bottom-6 text-gray-800 bg-blue-200"
       >
         {{ item.name }}
       </nuxt-link>

@@ -6,7 +6,7 @@ export default [
     image: 'cat_1.jpeg',
     colors: 'white orange',
     eyes: 'black yellow',
-    extra_image: [
+    gallery: [
       'cat_1.jpeg',
       'cat_2.jpeg',
       'cat_3.jpeg',
@@ -21,7 +21,7 @@ export default [
     image: 'cat_2.jpeg',
     colors: 'white orange',
     eyes: 'black yellow',
-    extra_image: [
+    gallery: [
       'cat_1.jpeg',
       'cat_2.jpeg',
       'cat_3.jpeg',
@@ -36,7 +36,7 @@ export default [
     image: 'cat_3.jpeg',
     colors: 'white orange',
     eyes: 'black yellow',
-    extra_image: [
+    gallery: [
       'cat_1.jpeg',
       'cat_2.jpeg',
       'cat_3.jpeg',
@@ -52,7 +52,7 @@ export default [
     image: 'cat_4.jpeg',
     colors: 'white orange',
     eyes: 'black yellow',
-    extra_image: [
+    gallery: [
       'cat_1.jpeg',
       'cat_2.jpeg',
       'cat_3.jpeg',
@@ -67,7 +67,7 @@ export default [
     image: 'cat_5.jpeg',
     colors: 'white orange',
     eyes: 'black yellow',
-    extra_image: [
+    gallery: [
       'cat_1.jpeg',
       'cat_2.jpeg',
       'cat_3.jpeg',
@@ -83,7 +83,7 @@ export default [
     image: 'cat_6.jpeg',
     colors: 'white orange',
     eyes: 'black yellow',
-    extra_image: [
+    gallery: [
       'cat_1.jpeg',
       'cat_2.jpeg',
       'cat_3.jpeg',

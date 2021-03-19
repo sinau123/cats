@@ -1,12 +1,12 @@
-import { getCatDetailLinks } from './data/derivedCatData'
+// import { getCatDetailLinks } from './data/derivedCatData'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
-  ssr: true,
+  // target: 'static',
+  ssr: false,
 
   generate: {
     crawler: true,
-    routes: getCatDetailLinks,
+    // routes: getCatDetailLinks,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head

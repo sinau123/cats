@@ -15,37 +15,28 @@
     <div class="font-bold text-center text-gray-700 m-4">
       <div class="text-3xl mb-4">{{ item.name }}</div>
       <div class="text-2xl text-blue-400" v-html="item.getInfoStr()"></div>
-      <div class="text-4xl mt-16 mb-8">
-        {{ item.gender === 'male' ? 'Father' : 'Mother' }} of Little KITTENs:
-      </div>
-      <div class="flex flex-wrap justify-center">
-        <template v-if="kittens.length > 0">
-          <nuxt-link
-            v-for="kitten in kittens"
-            :key="kitten.name"
-            :to="kitten.getLink()"
-            class="block shadow-3xl w-36 h-36 sm:w-48 sm:h-48 overflow-hidden rounded-full m-1 border-gray-500 border-2"
-          >
-            <img
-              class="w-36 h-36 sm:w-48 sm:h-48 object-cover"
-              :src="kitten.getImg()"
-              :alt="kitten.name"
-            />
-          </nuxt-link>
-        </template>
-        <template v-else>
-          <div v-for="img in [1, 2, 3, 4, 5]" :key="img">
-            <div
-              class="shadow-3xl sh w-36 h-36 sm:w-48 sm:h-48 overflow-hidden rounded-full m-1 border-gray-500 border-2"
-            >
-              <img
-                class="w-36 h-36 sm:w-48 sm:h-48 object-cover"
-                :src="require('~/assets/img/coming_soon.png')"
-                alt="coming soon"
-              />
-            </div>
-          </div>
-        </template>
+      <div class="text-4xl mt-16 mb-8">Parent:</div>
+      <div class="flex flex-wrap justify-center" data-aos="fade-up">
+        <nuxt-link
+          :to="dad.getLink()"
+          class="block shadow-3xl w-36 h-36 sm:w-48 sm:h-48 overflow-hidden rounded-md m-1 border-gray-500 border-2"
+        >
+          <img
+            class="w-36 h-36 sm:w-48 sm:h-48 object-cover"
+            :src="dad.getImg()"
+            :alt="dad.name"
+          />
+        </nuxt-link>
+        <nuxt-link
+          :to="mom.getLink()"
+          class="block shadow-3xl w-36 h-36 sm:w-48 sm:h-48 overflow-hidden rounded-full m-1 border-gray-500 border-2"
+        >
+          <img
+            class="w-36 h-36 sm:w-48 sm:h-48 object-cover"
+            :src="mom.getImg()"
+            :alt="mom.name"
+          />
+        </nuxt-link>
       </div>
       <div class="container my-8 mt-16 m-auto">
         <div class="text-center text-3xl font-bold my-10">Gallery:</div>
@@ -95,8 +86,8 @@
   </div>
 </template>
 <script>
-import { findCatByName } from '~/derived-data'
-import { CatItem } from '~/models/catItem'
+import { findKittenByName } from '~/derived-data'
+import { KittenItem } from '~/models/kittenItem'
 
 export default {
   components: {
@@ -127,14 +118,18 @@ export default {
       ],
     }
   },
+
   computed: {
-    kittens() {
-      return (this.item && this.item.getKittens()) || []
+    dad() {
+      return this.item.parent.male
+    },
+    mom() {
+      return this.item.parent.female
     },
   },
   created() {
-    this.item = findCatByName(
-      CatItem.getLowerNameFromRouteParam(this.$route.params.name)
+    this.item = findKittenByName(
+      KittenItem.getLowerNameFromRouteParam(this.$route.params.name)
     )
   },
   methods: {

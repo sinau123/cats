@@ -24,7 +24,7 @@ export const toCat = (cat) => {
     cat.gender,
     cat.eyes,
     cat.breeds,
-    cat.extra_image
+    cat.gallery
   )
 }
 
@@ -43,7 +43,7 @@ export const toKitten = (cat) => {
     cat.breeds,
     cat.birthdate,
     cat.available,
-    cat.extra_image,
+    cat.gallery,
     new KittenParent(
       findMaleCatByName(cat.parent.male),
       findFemaleCatByName(cat.parent.female)
@@ -139,6 +139,18 @@ export const findKittenByParent = (parentName) => {
       )
     })
     .map(toKitten)
+}
+
+/**
+ * get cat by name
+ * @param {string} name
+ * @returns {KittenItem}
+ */
+export function findKittenByName(name) {
+  const cat = kittensData.find(
+    (c) => c.name.toLowerCase() === name.toLowerCase()
+  )
+  return cat ? toKitten(cat) : cat
 }
 
 /**

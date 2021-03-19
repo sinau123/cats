@@ -4,13 +4,13 @@
     <div
       class="container m-auto flex lg:my-4 mt-4 mb-14 flex-col lg:flex-row text-center lg:text-left lg:items-end"
     >
-      <div>
+      <nuxt-link :to="item.getLink()">
         <img
           class="w-80 h-80 rounded-md border-2 border-gray-600 shadow-3xl overflow-hidden m-auto object-cover"
           :src="item.getImg()"
           :alt="item.name"
         />
-      </div>
+      </nuxt-link>
       <div class="flex-1 flex flex-col mt-4 lg:ml-4">
         <div>
           <div class="text-3xl font-bold">{{ item.name }}</div>

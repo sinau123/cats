@@ -20,7 +20,7 @@
     <div :class="type === 'male' ? 'pr-8' : 'pl-8'">
       <nuxt-link :to="item.getLink()" class="block">
         <div
-          class="font-bold text-xl xs-only:text-base text-center text-gray-800"
+          class="font-bold overflow-ellipsis whitespace-nowrap overflow-x-hidden text-xl xs-only:text-base text-center text-gray-800"
         >
           {{ item.name }}
         </div>

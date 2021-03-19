@@ -12,16 +12,16 @@ export class CatItem {
    * @param {string} gender
    * @param {string} eyes
    * @param {string} breeds
-   * @param {string[]} extraImg
+   * @param {string[]} gallery
    */
-  constructor(name, img, colors, gender, eyes, breeds, extraImg) {
+  constructor(name, img, colors, gender, eyes, breeds, gallery) {
     this.name = name || ''
     this.img = img || ''
     this.colors = colors || ''
     this.gender = gender || ''
     this.eyes = eyes || ''
     this.breeds = breeds || ''
-    this.extraImg = extraImg || []
+    this.gallery = gallery || []
   }
 
   /**
@@ -36,8 +36,8 @@ export class CatItem {
    * get cat extra image path
    * @returns {any[]}
    */
-  getExtraImg() {
-    return this.extraImg.map(CatItem.getImg)
+  getGallery() {
+    return this.gallery.map(CatItem.getImg)
   }
 
   /**

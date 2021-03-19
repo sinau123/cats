@@ -1,6 +1,5 @@
 import startCase from 'lodash/startCase'
 import { parse, format } from 'date-fns'
-import { CatItem } from './catItem'
 // eslint-disable-next-line no-unused-vars
 import { KittenParent } from './kittenParent'
 
@@ -15,7 +14,7 @@ export class KittenItem {
    * @param {string} breeds
    * @param {string} birthdate
    * @param {boolean} available
-   * @param {string[]} extraImg
+   * @param {string[]} gallery
    * @param {KittenParent} parent
    */
   constructor(
@@ -27,7 +26,7 @@ export class KittenItem {
     breeds,
     birthdate,
     available,
-    extraImg,
+    gallery,
     parent
   ) {
     this.name = name || ''
@@ -37,8 +36,8 @@ export class KittenItem {
     this.eyes = eyes || ''
     this.breeds = breeds || ''
     this.birthdate = birthdate
-    this.available = available || true
-    this.extraImg = extraImg || []
+    this.available = available
+    this.gallery = gallery || []
     this.parent = parent
   }
 
@@ -47,7 +46,15 @@ export class KittenItem {
    * @returns {any}
    */
   getImg() {
-    return require(`~/assets/img/kittens/${this.img}`)
+    return KittenItem.getImg(this.img)
+  }
+
+  /**
+   * get cat extra image path
+   * @returns {any[]}
+   */
+  getGallery() {
+    return this.gallery.map(KittenItem.getImg)
   }
 
   /**
@@ -55,7 +62,7 @@ export class KittenItem {
    * @returns {string}
    */
   getLink() {
-    return CatItem.getLink(this.name)
+    return KittenItem.getLink(this.name)
   }
 
   /**
@@ -110,5 +117,14 @@ export class KittenItem {
    */
   static getLowerNameFromRouteParam(paramName) {
     return paramName.replace(/_/g, ' ')
+  }
+
+  /**
+   * get cat image path
+   * @param {string} img
+   * @returns {any}
+   */
+  static getImg(img) {
+    return require(`~/assets/img/kittens/${img}`)
   }
 }

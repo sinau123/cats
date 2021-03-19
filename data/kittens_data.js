@@ -8,7 +8,7 @@ export default [
     eyes: 'black yellow',
     birthdate: '15-01-2021',
     available: true,
-    extra_image: [
+    gallery: [
       'cat_1.jpeg',
       'cat_2.jpeg',
       'cat_3.jpeg',
@@ -29,7 +29,7 @@ export default [
     eyes: 'black yellow',
     birthdate: '15-01-2021',
     available: false,
-    extra_image: [
+    gallery: [
       'cat_1.jpeg',
       'cat_2.jpeg',
       'cat_3.jpeg',
@@ -50,7 +50,7 @@ export default [
     eyes: 'black yellow',
     birthdate: '12-02-2021',
     available: true,
-    extra_image: [
+    gallery: [
       'cat_1.jpeg',
       'cat_2.jpeg',
       'cat_3.jpeg',
@@ -71,7 +71,7 @@ export default [
     eyes: 'black yellow',
     birthdate: '12-02-2021',
     available: true,
-    extra_image: [
+    gallery: [
       'cat_1.jpeg',
       'cat_2.jpeg',
       'cat_3.jpeg',
