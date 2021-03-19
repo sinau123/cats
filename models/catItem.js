@@ -1,7 +1,7 @@
 import startCase from 'lodash/startCase'
+import { findKittenByParent } from '../data/derivedCatData'
 // eslint-disable-next-line no-unused-vars
 import { KittenItem } from './kittenItem'
-import { findKittenByParent } from '~/data/derivedCatData'
 
 export class CatItem {
   /**
@@ -12,17 +12,17 @@ export class CatItem {
    * @param {string} gender
    * @param {string} eyes
    * @param {string} breeds
-   * @param {string[]} extraImage
+   * @param {string[]} extraImg
    * @param {any[]} kittens
    */
-  constructor(name, img, colors, gender, eyes, breeds, extraImage, kittens) {
+  constructor(name, img, colors, gender, eyes, breeds, extraImg, kittens) {
     this.name = name || ''
     this.img = img || ''
     this.colors = colors || ''
     this.gender = gender || ''
     this.eyes = eyes || ''
     this.breeds = breeds || ''
-    this.extraImage = extraImage || []
+    this.extraImg = extraImg || []
     this.kittens = kittens || []
   }
 
@@ -31,7 +31,15 @@ export class CatItem {
    * @returns {any}
    */
   getImg() {
-    return require(`~/assets/img/cats/${this.img}`)
+    return CatItem.getImg(this.img)
+  }
+
+  /**
+   * get cat extra image path
+   * @returns {any[]}
+   */
+  getExtraImg() {
+    return this.extraImg.map(CatItem.getImg)
   }
 
   /**
@@ -78,5 +86,14 @@ export class CatItem {
    */
   static getLowerNameFromRouteParam(paramName) {
     return paramName.replace(/_/g, ' ')
+  }
+
+  /**
+   * get img path
+   * @param {string} path
+   * @returns {string}
+   */
+  static getImg(path) {
+    return require(`~/assets/img/cats/${path}`)
   }
 }

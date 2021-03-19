@@ -65,12 +65,7 @@
               <nuxt-link
                 :to="item.link"
                 class="inline-block px-4 py-3"
-                :class="
-                  $route.path.replace(/\/$/, '') ===
-                  item.link.replace(/\/$/, '')
-                    ? 'font-bold text-gray-50'
-                    : 'font-normal'
-                "
+                :exact="item.link === '/'"
               >
                 {{ item.name }}
               </nuxt-link>
@@ -165,5 +160,11 @@ export default {
 
 .open .hamburger__bottom-bun {
   transform: rotate(-45deg) translateY(0px);
+}
+</style>
+
+<style lang="less" scoped>
+.nuxt-link-active {
+  @apply text-gray-50;
 }
 </style>

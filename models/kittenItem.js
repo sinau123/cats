@@ -11,7 +11,7 @@ export class KittenItem {
    * @param {string} eyes
    * @param {string} breeds
    * @param {string} birthdate
-   * @param {string[]} extraImage
+   * @param {string[]} extraImg
    * @param {CatItem[]} parent
    */
   constructor(
@@ -22,7 +22,7 @@ export class KittenItem {
     eyes,
     breeds,
     birthdate,
-    extraImage,
+    extraImg,
     parent
   ) {
     this.name = name || ''
@@ -32,7 +32,7 @@ export class KittenItem {
     this.eyes = eyes || ''
     this.breeds = breeds || ''
     this.birthdate = birthdate
-    this.extraImage = extraImage || []
+    this.extraImg = extraImg || []
     this.parent = parent || []
   }
 

@@ -19,9 +19,21 @@ module.exports = {
       'xl-only': { min: '1280px', max: '1535px' },
       ...defaultTheme.screens,
     },
+    boxShadow: {
+      '3xl': '0px 11px 25px -8px rgba(0,0,0,0.78)',
+      ...defaultTheme.boxShadow,
+    },
     fontFamily: {
       pota: ['Potta One, cursive'],
       ...defaultTheme.fontFamily,
+    },
+    spacing: {
+      112: '28rem',
+      128: '32rem',
+      144: '36rem',
+      168: '42rem',
+      192: '48rem',
+      ...defaultTheme.spacing,
     },
   },
   variants: {

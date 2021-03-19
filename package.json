@@ -21,7 +21,8 @@
     "lodash": "^4.17.21",
     "nuxt": "^2.15.3",
     "nuxt-lazy-load": "^1.2.5",
-    "tippy.js": "^6.3.1"
+    "tippy.js": "^6.3.1",
+    "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",

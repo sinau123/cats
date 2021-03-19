@@ -13,10 +13,7 @@
             data-trigger
             :to="item.link"
             class="block py-1 px-4 lg:px-8 my-2"
-            :class="{
-              'text-gray-50':
-                $route.path.replace(/\/$/, '') === item.link.replace(/\/$/, ''),
-            }"
+            :exact="item.link === '/'"
           >
             {{ item.name }}
           </nuxt-link>
@@ -47,3 +44,8 @@ export default {
   },
 }
 </script>
+<style lang="less" scoped>
+.nuxt-link-active {
+  @apply text-gray-50;
+}
+</style>

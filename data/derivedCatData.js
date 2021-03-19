@@ -1,9 +1,9 @@
-import catsData from '~/data/cats_data'
-import kittensData from '~/data/kittens_data'
-import catsPlanData from '~/data/cats_plans_data'
-import { CatItem } from '~/models/catItem'
-import { CatPlanItem } from '~/models/catPlanItem'
-import { KittenItem } from '~/models/kittenItem'
+import { CatItem } from '../models/catItem'
+import { CatPlanItem } from '../models/catPlanItem'
+import { KittenItem } from '../models/kittenItem'
+import catsData from './cats_data'
+import kittensData from './kittens_data'
+import catsPlanData from './cats_plans_data'
 
 export default {
   catsData,

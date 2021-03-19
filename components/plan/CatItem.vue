@@ -6,7 +6,7 @@
     <div class="text-center">
       <div
         class="shadow-xl border-2 border-gray-600 mb-7 overflow-hidden"
-        :class="type === 'male' ? 'rounded-md' : 'rounded-full border-pink-600'"
+        :class="type === 'male' ? 'rounded-md' : 'rounded-full border-pink-400'"
       >
         <img
           class="md:w-80 md:h-80 lg:w-96 lg:h-96 h-44 w-44 object-cover"

@@ -1,7 +1,7 @@
 export default [
   {
     name: 'Kitten One',
-    image: 'cat_2.png',
+    image: 'cat_2.jpeg',
     breeds: 'Persian',
     gender: 'male',
     colors: 'white orange',
@@ -21,7 +21,7 @@ export default [
   },
   {
     name: 'Kitten Two',
-    image: 'cat_4.png',
+    image: 'cat_4.jpeg',
     breeds: 'Persian',
     gender: 'male',
     colors: 'white orange',
@@ -41,7 +41,7 @@ export default [
   },
   {
     name: 'Kitten Three',
-    image: 'cat_2.png',
+    image: 'cat_2.jpeg',
     breeds: 'Persian',
     gender: 'male',
     colors: 'white orange',
@@ -61,7 +61,7 @@ export default [
   },
   {
     name: 'Kitten Four',
-    image: 'cat_4.png',
+    image: 'cat_4.jpeg',
     breeds: 'Persian',
     gender: 'male',
     colors: 'white orange',

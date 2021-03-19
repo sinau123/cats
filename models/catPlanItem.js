@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { CatItem } from '~/models/catItem.js'
+import { CatItem } from './catItem.js'
 
 export class CatPlanItem {
   /**
