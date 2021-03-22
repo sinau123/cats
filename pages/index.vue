@@ -36,12 +36,12 @@
 <script>
 export default {
   head: {
-    title: 'Home page',
+    title: 'Home | Miaumi Cattery',
     meta: [
       {
         hid: 'og:description',
         name: 'og:description',
-        content: 'Home page description',
+        content: 'Miaumi Cattery',
       },
       {
         hid: 'og:title',

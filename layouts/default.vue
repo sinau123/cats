@@ -2,7 +2,7 @@
   <div>
     <div id="container">
       <Navbar />
-      <div class="min-h-full">
+      <div class="min-h-full p-2 lg:p-0">
         <Nuxt />
       </div>
     </div>

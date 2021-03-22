@@ -23,6 +23,9 @@ export default {
       plans: getPlanItems,
     }
   },
+  head: {
+    title: 'Cat Plans | Miaumi Cattery',
+  },
   methods: {
     getCurYear() {
       return new Date().getFullYear()

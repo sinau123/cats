@@ -23,7 +23,7 @@
           <div class="mt-8 lg:mt-0">
             <nuxt-link
               class="shadow-3xl block bg-blue-300 px-4 py-2 border-gray-600 border-2 rounded-md"
-              to=""
+              :to="`/contact_us?subject=Adopt a kitten&body=I want to adopt '${item.name}'`"
             >
               Book Kitten
             </nuxt-link>

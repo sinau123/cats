@@ -21,5 +21,8 @@ export default {
       items: getAvailableKittens,
     }
   },
+  head: {
+    title: 'Adopt Me | Miaumi Cattery',
+  },
 }
 </script>

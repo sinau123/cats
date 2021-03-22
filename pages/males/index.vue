@@ -16,14 +16,7 @@ export default {
     }
   },
   head: {
-    title: 'Male Cats',
-    meta: [
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content: 'Male Cats',
-      },
-    ],
+    title: 'Male Cats | Miaumi Cattery',
   },
 }
 </script>

@@ -16,14 +16,7 @@ export default {
     }
   },
   head: {
-    title: 'Kitten List ',
-    meta: [
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content: 'Kitten List',
-      },
-    ],
+    title: 'Kitten List | Miaumi Cattery',
   },
 }
 </script>

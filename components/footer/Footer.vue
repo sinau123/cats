@@ -31,7 +31,14 @@
           </a>
         </div>
         <div class="text-right">
-          fast respons via whatsapp +62 823 4800 5555 <br />
+          fast respons via whatsapp
+          <a
+            href="https://web.whatsapp.com/send?phone=6282348005555&amp;text=Hello%2C%0A%0A"
+            rel="noreferrer noopener"
+            target="_blank"
+            >+62 823 4800 5555</a
+          >
+          <br />
           mamicattery@gmail.com <br />
           Jakarta, Indonesia
         </div>

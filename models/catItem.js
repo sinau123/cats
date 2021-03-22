@@ -103,6 +103,15 @@ export class CatItem {
   }
 
   /**
+   * get name from router param
+   * @param {string} paramName
+   * @returns {string}
+   */
+  static getNameFromRouteParam(paramName) {
+    return startCase(CatItem.getLowerNameFromRouteParam(paramName))
+  }
+
+  /**
    * get img path
    * @param {string} path
    * @returns {string}

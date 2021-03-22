@@ -1,8 +1,12 @@
 // import { getCatDetailLinks } from './data/derivedCatData'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
-  ssr: true,
+  target: process.env.NODE_ENV === 'production' ? 'static' : undefined,
+  ssr: process.env.NODE_ENV === 'production',
+
+  server: {
+    host: '0.0.0.0',
+  },
 
   generate: {
     crawler: true,

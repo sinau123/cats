@@ -6,7 +6,10 @@ import catsData from '../data/cats_data'
 import kittensData from '../data/kittens_data'
 import catsPlanData from '../data/cats_plans_data'
 
+console.log(CatItem)
+
 export default {
+  CatItem,
   catsData,
   kittensData,
 }
@@ -16,7 +19,7 @@ export default {
  * @param {*} cat
  * @returns {CatItem}
  */
-export const toCat = (cat) => {
+export function toCat(cat) {
   return new CatItem(
     cat.name,
     cat.image,
@@ -33,7 +36,7 @@ export const toCat = (cat) => {
  * @param {*} cat
  * @returns {KittenItem}
  */
-export const toKitten = (cat) => {
+export function toKitten(cat) {
   return new KittenItem(
     cat.name,
     cat.image,
