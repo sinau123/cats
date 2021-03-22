@@ -6,8 +6,6 @@ import catsData from '../data/cats_data'
 import kittensData from '../data/kittens_data'
 import catsPlanData from '../data/cats_plans_data'
 
-console.log(CatItem)
-
 export default {
   CatItem,
   catsData,
