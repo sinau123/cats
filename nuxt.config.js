@@ -36,7 +36,7 @@ export default {
   plugins: [{ src: '~/plugins/aos', ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: false,
+  components: [{ path: '~/components/global' }],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [

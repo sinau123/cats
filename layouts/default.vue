@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div id="container">
+    <div id="container" class="pt-24">
       <Navbar />
-      <div class="min-h-full p-2 lg:p-0">
+      <div class="min-h-full">
         <Nuxt />
       </div>
     </div>

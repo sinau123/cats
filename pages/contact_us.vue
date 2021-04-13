@@ -1,5 +1,13 @@
 <template>
-  <div class="container m-auto mt-5">
+  <div class="container m-auto mt-5 px-3">
+    <div
+      class="text-green-theme font-playfair text-5xl text-center p-4 font-extrabold"
+    >
+      Contact <span class="text-green-theme">Us</span>
+    </div>
+    <div class="text-red-theme text-center text-3xl font-bold mb-6">
+      We'd love to hear <span class="text-green-theme">from you</span>
+    </div>
     <form class="mb-4 md:flex md:flex-wrap" novalidate @submit.prevent="submit">
       <div class="field-group mb-4 md:w-full">
         <label class="field-label" for="email">Message</label>
@@ -7,9 +15,10 @@
         <textarea
           ref="message"
           v-model="message"
-          class="field"
+          class="field md:w-168 text-lg"
           name="message"
           rows="10"
+          cols="50"
           required
           minlength="5"
         ></textarea>
@@ -17,11 +26,11 @@
       <div class="field-group mb-4 md:w-full">
         <label class="field-label" for="email">Send via: </label>
         <div class="radio">
-          <label class="cursor-pointer" for="WA">Whatsapp</label>
+          <label class="cursor-pointer font-bold" for="WA">Whatsapp</label>
           <input id="WA" v-model="via" class="field" value="wa" type="radio" />
         </div>
         <div class="radio">
-          <label class="cursor-pointer" for="Email">Email</label>
+          <label class="cursor-pointer font-bold" for="Email">Email</label>
           <input
             id="Email"
             v-model="via"
@@ -32,7 +41,7 @@
         </div>
       </div>
       <div class="flex w-full">
-        <button class="btn btn-contact-us" type="submit">Send</button>
+        <MyButton class="sm:w-44 w-full" type="submit">Send</MyButton>
       </div>
     </form>
     <a ref="link"></a>

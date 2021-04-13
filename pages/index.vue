@@ -1,29 +1,22 @@
 <template>
-  <div
-    class="flex flex-row justify-center items-center py-1 sm:py-2 m-auto container"
-  >
+  <div class="">
     <div>
       <div class="relative">
-        <img
-          v-lazy-load
-          class="text-center lg:w-4xl"
-          :data-src="require('~/assets/img/cat-home.jpeg')"
-          alt=""
-        />
+        <div class="bg-image h-96 lg:h-192 sm:h-144"></div>
         <div
-          class="absolute bottom-2 sm:bottom-4 p-2 sm:p-8 text-white font-bold"
+          class="absolute bottom-0 p-2 sm:p-8 font-bold bg-white w-full bg-opacity-75 overflow-x-hidden"
         >
           <div
             data-aos="fade-right"
             data-aos-duration="2000"
-            class="font-pota text-3xl sm:text-6xl md:max-w-xl text-shadow-xl"
+            class="font-playfair text-red-theme text-3xl sm:text-6xl mb-3 md:max-w-xl text-shadow-xl"
           >
             from the best bloodlines
           </div>
           <div
             data-aos="fade-left"
             data-aos-duration="2000"
-            class="text-shadow text-base sm:text-2xl leading-4"
+            class="text-shadow font-playfair text-green-theme text-base sm:text-2xl"
           >
             we developing posture and characteristics
           </div>
@@ -53,4 +46,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.bg-image {
+  background-image: url('~/assets/img/cat-home.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+</style>

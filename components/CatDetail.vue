@@ -2,8 +2,8 @@
 <template>
   <div v-if="item">
     <div
-      class="shadow-3xl border-2 rounded-lg border-gray-600 md:w-96 md:h-96 w-80 h-80 mt-5 mb-9 m-auto overflow-hidden"
-      :class="{ 'rounded-full border-pink-400': item.gender === 'female' }"
+      class="shadow-3xl rounded-lg md:w-96 md:h-96 w-80 h-80 mt-5 mb-9 m-auto overflow-hidden"
+      :class="{ 'rounded-full': item.gender === 'female' }"
     >
       <img
         class="transition-transform duration-500 transform hover:scale-125 md:w-96 md:h-96 w-80 h-80 object-cover"
@@ -12,11 +12,23 @@
       />
     </div>
 
-    <div class="font-bold text-center text-gray-700 m-4">
-      <div class="text-3xl mb-4">{{ item.name }}</div>
-      <div class="text-2xl text-blue-400" v-html="item.getInfoStr()"></div>
-      <div class="text-4xl mt-16 mb-8">
-        {{ item.gender === 'male' ? 'Father' : 'Mother' }} of Little KITTENs:
+    <div class="text-center m-4">
+      <div class="text-3xl font-playfair text-red-theme font-extrabold">
+        {{ item.name }}
+      </div>
+      <div
+        class="text-2xl font-bold text-green-theme"
+        v-html="
+          item
+            .getInfoStr()
+            .replace(/\//g, `<span class='text-red-theme'>&bull;</span>`)
+        "
+      ></div>
+      <div
+        class="text-4xl font-playfair text-red-theme font-extrabold mt-16 my-4"
+      >
+        {{ item.gender === 'male' ? 'Father' : 'Mother' }} of
+        <span class="text-green-theme">Little KITTENs</span>
       </div>
       <div class="flex flex-wrap justify-center">
         <template v-if="kittens.length > 0">
@@ -24,7 +36,7 @@
             v-for="kitten in kittens"
             :key="kitten.name"
             :to="kitten.getLink()"
-            class="block shadow-3xl w-36 h-36 sm:w-48 sm:h-48 overflow-hidden rounded-full m-1 border-gray-500 border-2"
+            class="block shadow-2xl hover:shadow-3xl w-36 h-36 sm:w-48 sm:h-48 overflow-hidden rounded-full m-1 border-gray-500 border-2"
           >
             <img
               class="w-36 h-36 sm:w-48 sm:h-48 object-cover"
@@ -48,7 +60,11 @@
         </template>
       </div>
       <div class="container my-8 mt-16 m-auto">
-        <div class="text-center text-3xl font-bold my-10">Gallery:</div>
+        <div
+          class="text-4xl text-center font-playfair text-red-theme font-extrabold mt-16 my-4"
+        >
+          Gallery
+        </div>
         <VueSlickCarousel
           ref="main_carousel"
           :arrows="false"

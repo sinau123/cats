@@ -2,30 +2,42 @@
 <template>
   <div class="py-6">
     <div
-      class="container m-auto flex lg:my-4 mt-4 mb-14 flex-col lg:flex-row text-center lg:text-left lg:items-end"
+      class="container m-auto flex lg:my-4 mt-4 mb-14 flex-col lg:flex-row text-center lg:text-left lg:items-end px-3"
     >
       <nuxt-link :to="item.getLink()">
         <img
-          class="w-80 h-80 rounded-md border-2 border-gray-600 shadow-3xl overflow-hidden m-auto object-cover"
+          class="w-80 h-80 rounded-md shadow-2xl hover:shadow-3xl overflow-hidden m-auto object-cover"
           :src="item.getImg()"
           :alt="item.name"
         />
       </nuxt-link>
       <div class="flex-1 flex flex-col mt-4 lg:ml-4">
         <div>
-          <div class="text-3xl font-bold">{{ item.name }}</div>
-          <div class="text-xl font-bold" v-html="item.getSimpleInfoStr()"></div>
-          <div class="text-xl">Parent: {{ dad.name }} &#38; {{ mom.name }}</div>
+          <div class="text-3xl font-playfair text-red-theme font-extrabold">
+            {{ item.name }}
+          </div>
+          <div
+            class="text-xl text-green-theme font-bold mb-4"
+            v-html="
+              item
+                .getSimpleInfoStr()
+                .replace(/\//g, `<span class='text-red-theme'>&bull;</span>`)
+            "
+          ></div>
+          <div class="text-xl font-bold">
+            Parent: {{ dad.name }} - {{ mom.name }}
+          </div>
         </div>
         <div
           class="flex mt-4 lg:items-end justify-between flex-col-reverse lg:flex-row items-center"
         >
           <div class="mt-8 lg:mt-0">
             <nuxt-link
-              class="shadow-3xl block bg-blue-300 px-4 py-2 border-gray-600 border-2 rounded-md"
               :to="`/contact_us?subject=Adopt a kitten&body=I want to adopt '${item.name}'`"
             >
-              Book Kitten
+              <MyButton tag="div" class="shadow-3xl block px-4 py-2"
+                >Book Kitten</MyButton
+              >
             </nuxt-link>
           </div>
           <div class="flex">

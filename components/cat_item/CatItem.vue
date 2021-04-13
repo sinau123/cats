@@ -4,10 +4,8 @@
     <div class="relative text-center">
       <nuxt-link
         :to="item.getLink()"
-        class="block hover:opacity-100 hover:shadow-3xl shadow-xl border-2 border-gray-600 mb-7 overflow-hidden"
-        :class="
-          type === 'male' ? 'rounded-md' : 'rounded-full  border-pink-400'
-        "
+        class="block hover:opacity-100 hover:shadow-3xl shadow-xl mb-7 overflow-hidden"
+        :class="type === 'male' ? 'rounded-md' : 'rounded-full'"
       >
         <img
           class="transition-transform duration-700 transform hover:scale-125 md:w-60 md:h-60 lg:w-80 lg:h-80 h-72 w-72 object-cover"
@@ -15,16 +13,22 @@
           :alt="item.name"
         />
       </nuxt-link>
-      <nuxt-link
-        :to="item.getLink()"
-        class="hover:opacity-100 overflow-ellipsis whitespace-nowrap overflow-x-hidden hover:bg-blue-300 block font-bold text-xl shadow-xl border-gray-600 border-2 rounded-2xl absolute mx-4 left-0 right-0 text-center p-2 -bottom-6 text-gray-800 bg-blue-200"
-      >
-        {{ item.name }}
+      <nuxt-link :to="item.getLink()">
+        <MyButton
+          tag="div"
+          class="overflow-ellipsis whitespace-nowrap overflow-x-hidden block font-bold text-xl shadow-xl absolute mx-4 left-0 right-0 -bottom-6"
+        >
+          {{ item.name }}
+        </MyButton>
       </nuxt-link>
     </div>
     <div
-      class="text-lg text-center text-blue-400"
-      v-html="item.getSimpleInfoStr()"
+      class="text-lg text-center text-green-theme font-bold"
+      v-html="
+        item
+          .getSimpleInfoStr()
+          .replace(/\//g, `<span class='text-red-theme'>&bull;</span>`)
+      "
     ></div>
   </div>
 </template>

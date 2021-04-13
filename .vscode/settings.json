@@ -37,5 +37,6 @@
         "editor.formatOnSave": true
     },
     "prettier.useEditorConfig": false,
-    "less.validate": false
+    "less.validate": false,
+    "vetur.validation.style": false,
 }

@@ -2,8 +2,8 @@
 <template>
   <div v-if="item">
     <div
-      class="shadow-3xl border-2 rounded-lg border-gray-600 md:w-96 md:h-96 w-80 h-80 mt-5 mb-9 m-auto overflow-hidden"
-      :class="{ 'rounded-full border-pink-400': item.gender === 'female' }"
+      class="shadow-3xl rounded-lg md:w-96 md:h-96 w-80 h-80 mt-5 mb-9 m-auto overflow-hidden"
+      :class="{ 'rounded-full ': item.gender === 'female' }"
     >
       <img
         class="transition-transform duration-500 transform hover:scale-125 md:w-96 md:h-96 w-80 h-80 object-cover"
@@ -12,14 +12,42 @@
       />
     </div>
 
-    <div class="font-bold text-center text-gray-700 m-4">
-      <div class="text-3xl mb-4">{{ item.name }}</div>
-      <div class="text-2xl text-blue-400" v-html="item.getInfoStr()"></div>
-      <div class="text-4xl mt-16 mb-8">Parent:</div>
+    <div class="relative md:w-96 w-80 h-2 m-auto">
+      <div
+        v-if="item.available"
+        class="bounced absolute bottom-4 right-4 md:-right-40 z-10"
+      >
+        <nuxt-link
+          :to="`/contact_us?subject=Adopt a kitten&body=I want to adopt '${item.name}'`"
+        >
+          <MyButton tag="div" class="md:text-3xl shadow-3xl block md:px-8 py-2"
+            >Book Kitten</MyButton
+          >
+        </nuxt-link>
+      </div>
+    </div>
+
+    <div class="text-center m-4">
+      <div class="text-3xl font-playfair text-red-theme font-extrabold">
+        {{ item.name }}
+      </div>
+      <div
+        class="text-2xl font-bold text-green-theme"
+        v-html="
+          item
+            .getInfoStr()
+            .replace(/\//g, `<span class='text-red-theme'>&bull;</span>`)
+        "
+      ></div>
+      <div
+        class="text-4xl font-playfair text-red-theme font-extrabold mt-16 my-4"
+      >
+        Parent
+      </div>
       <div class="flex flex-wrap justify-center" data-aos="fade-up">
         <nuxt-link
           :to="dad.getLink()"
-          class="block shadow-3xl w-36 h-36 sm:w-48 sm:h-48 overflow-hidden rounded-md m-1 border-gray-500 border-2"
+          class="block shadow-2xl hover:shadow-3xl w-36 h-36 sm:w-48 sm:h-48 overflow-hidden rounded-md m-1 border-gray-500 border-2"
         >
           <img
             class="w-36 h-36 sm:w-48 sm:h-48 object-cover"
@@ -29,7 +57,7 @@
         </nuxt-link>
         <nuxt-link
           :to="mom.getLink()"
-          class="block shadow-3xl w-36 h-36 sm:w-48 sm:h-48 overflow-hidden rounded-full m-1 border-gray-500 border-2"
+          class="block shadow-2xl hover:shadow-3xl w-36 h-36 sm:w-48 sm:h-48 overflow-hidden rounded-full m-1 border-gray-500 border-2"
         >
           <img
             class="w-36 h-36 sm:w-48 sm:h-48 object-cover"
@@ -38,8 +66,12 @@
           />
         </nuxt-link>
       </div>
-      <div class="container my-8 mt-16 m-auto">
-        <div class="text-center text-3xl font-bold my-10">Gallery:</div>
+      <div class="container m-auto">
+        <div
+          class="text-4xl text-center font-playfair text-red-theme font-extrabold mt-16 my-4"
+        >
+          Gallery
+        </div>
         <VueSlickCarousel
           ref="main_carousel"
           :arrows="false"
@@ -139,3 +171,28 @@ export default {
   },
 }
 </script>
+<style lang="less" scoped>
+.bounced {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+  animation-name: bounce;
+  animation-timing-function: linear;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+</style>

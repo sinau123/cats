@@ -7,7 +7,7 @@ import DerivedData from '~/derived-data'
 
 export default {
   components: {
-    CatDetail: () => import('~/components/CatDetail'),
+    CatDetail: () => import('~/components/kittens/KittenDetail'),
   },
   data() {
     return {

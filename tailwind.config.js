@@ -24,7 +24,9 @@ module.exports = {
       ...defaultTheme.boxShadow,
     },
     fontFamily: {
-      pota: ['Potta One, cursive'],
+      playfair: ['Playfair Display, cursive'],
+      sourcepro: ['Source Sans Pro, cursive'],
+      montserrat: ['Montserrat', 'cursive'],
       ...defaultTheme.fontFamily,
     },
     spacing: {
@@ -35,9 +37,31 @@ module.exports = {
       192: '48rem',
       ...defaultTheme.spacing,
     },
+    textColor: (theme) => ({
+      'red-theme': '#f15958',
+      'pink-theme': '#FBEAEC',
+      'green-theme': '#103c3b',
+      facebook: '#1877F2',
+      instagram: '#E4405F',
+      ...theme('colors'),
+    }),
+    backgroundColor: (theme) => ({
+      'red-theme': '#f15958',
+      'pink-theme': '#FBEAEC',
+      'green-theme': '#103c3b',
+      ...theme('colors'),
+    }),
+    borderColor: (theme) => ({
+      'red-theme': '#f15958',
+      'pink-theme': '#FBEAEC',
+      'green-theme': '#103c3b',
+      ...theme('colors'),
+    }),
   },
   variants: {
-    extend: {},
+    extend: {
+      padding: ['last'],
+    },
   },
   plugins: [
     // https://github.com/iunteq/tailwindcss-textshadow

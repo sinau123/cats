@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { CatItem } from '~/models/catItem'
+import DerivedData from '~/derived-data'
 
 export default {
   components: {
@@ -20,7 +20,9 @@ export default {
     }
   },
   created() {
-    this.catTitle = CatItem.getNameFromRouteParam(this.$route.params.name)
+    this.catTitle = DerivedData.CatItem.getNameFromRouteParam(
+      this.$route.params.name
+    )
   },
 }
 </script>

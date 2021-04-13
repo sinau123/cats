@@ -1,7 +1,7 @@
 <template>
-  <div class="flex py-4 w-full justify-center">
+  <div class="flex py-4 w-full justify-center overflow-x-hidden">
     <CatItem :item="item.male" data-aos="fade-right" />
-    <CatItem :item="item.female" type="female" data-aos="fade-up" />
+    <CatItem :item="item.female" type="female" data-aos="fade-left" />
   </div>
 </template>
 <script>
